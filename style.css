@@ -1,0 +1,268 @@
+:root {
+  --card: rgba(255, 255, 255, 0.74);
+  --card-strong: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(91, 115, 160, 0.16);
+  --text: #0f1b33;
+  --text-soft: rgba(15, 27, 51, 0.72);
+  --accent: #3c63ff;
+  --accent-soft: rgba(60, 99, 255, 0.1);
+  --max-width: 1080px;
+  --radius: 24px;
+  --shadow: 0 22px 50px rgba(75, 101, 145, 0.12);
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Inter", sans-serif;
+  --font-korean: "Gowun Batang", serif;
+  --font-mono:
+    "SFMono-Regular", "SF Mono", "Cascadia Code", "JetBrains Mono", Consolas,
+    "Liberation Mono", Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--text);
+  line-height: 1.6;
+  background:
+    radial-gradient(circle at top, rgba(60, 99, 255, 0.12), transparent 26%),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(13, 148, 136, 0.08),
+      transparent 20%
+    ),
+    linear-gradient(180deg, #f9fbff 0%, #eef4ff 58%, #e8f0ff 100%);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-korean {
+  font-family: var(--font-korean);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(var(--max-width), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(247, 250, 255, 0.76);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(91, 115, 160, 0.08);
+}
+
+.header-inner {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.hero {
+  padding: 92px 0 54px;
+}
+
+.hero-inner {
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.9rem, 6vw, 4.9rem);
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+}
+
+.hero-text {
+  margin: 22px 0 0;
+  max-width: 640px;
+  color: var(--text-soft);
+  font-size: 1.08rem;
+}
+
+.focus,
+.portfolio {
+  padding: 24px 0 52px;
+}
+
+.section-head {
+  margin-bottom: 20px;
+}
+
+.section-label {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.section-head h2,
+.portfolio-copy h2 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card,
+.portfolio-item {
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.card.featured {
+  background:
+    linear-gradient(180deg, rgba(60, 99, 255, 0.1), rgba(255, 255, 255, 0.8)),
+    var(--card-strong);
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1.24rem;
+  line-height: 1.2;
+}
+
+.card p,
+.portfolio-item span,
+.footer-inner {
+  color: var(--text-soft);
+}
+
+.portfolio-inner {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.portfolio-list {
+  display: grid;
+  gap: 14px;
+}
+
+.portfolio-item {
+  display: grid;
+  gap: 6px;
+}
+
+.portfolio-item strong {
+  font-size: 1rem;
+}
+
+.portfolio-item:hover {
+  border-color: rgba(60, 99, 255, 0.22);
+  transform: translateY(-1px);
+}
+
+.site-footer {
+  padding: 20px 0 36px;
+  border-top: 1px solid rgba(91, 115, 160, 0.1);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.92rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a:hover {
+  color: #facc15;
+  text-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
+}
+
+@media (max-width: 900px) {
+  .card-grid,
+  .portfolio-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(var(--max-width), calc(100% - 24px));
+  }
+
+  .header-inner {
+    height: 60px;
+  }
+
+  .hero {
+    padding: 72px 0 42px;
+  }
+
+  .focus,
+  .portfolio {
+    padding: 20px 0 42px;
+  }
+}
