@@ -250,7 +250,7 @@ a {
 
 @media (max-width: 640px) {
   .container {
-    width: min(var(--max-width), calc(100% - 24px));
+    width: min(var(--max-width), calc(100% - clamp(24px, 6vw, 40px)));
   }
 
   .header-inner {
@@ -258,7 +258,7 @@ a {
   }
 
   .hero {
-    padding: 72px 0 42px;
+    padding: 60px 0 34px;
   }
 
   .focus,
